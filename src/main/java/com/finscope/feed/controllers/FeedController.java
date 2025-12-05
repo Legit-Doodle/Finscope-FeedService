@@ -1,5 +1,6 @@
 package com.finscope.feed.controllers;
 
+import com.finscope.feed.dto.FeedApiResponse;
 import com.finscope.feed.entities.Post;
 import com.finscope.feed.services.FeedService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,14 +13,16 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/feed")
 public class FeedController {
-
     @Autowired
     private FeedService feedService;
 
     @GetMapping
-    public List<Post> getAllPosts() {
+    public FeedApiResponse getAllPosts() {
         try {
-            return feedService.getFeed();
+            List<Post> posts = feedService.getFeed().collectList().block();
+            long count = posts.size();
+            FeedApiResponse response = new FeedApiResponse(posts, count);
+            return response;
         } catch (Exception e) {
             throw new RuntimeException("Error fetching feed: " + e.getMessage(), e);
         }
