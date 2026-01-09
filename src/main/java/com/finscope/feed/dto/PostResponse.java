@@ -4,8 +4,8 @@ import com.finscope.feed.entities.Post;
 
 import java.util.List;
 
-public class FeedApiResponse extends ApiResponse<Post> {
-    public FeedApiResponse(List<Post> data, long count) {
+public class PostResponse extends ApiResponse<Post> {
+    public PostResponse(List<Post> data, long count) {
         super(data, count);
     }
 }
