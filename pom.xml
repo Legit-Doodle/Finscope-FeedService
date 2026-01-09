@@ -85,7 +85,6 @@
 		            <schemaVersion>v2</schemaVersion>
 		            <resourceGroup>feed-1765020275335-rg</resourceGroup>
 		            <appName>feed-1765020275335</appName>
-		            <pricingTier>P1v2</pricingTier>
 		            <region>centralus</region>
 		            <runtime>
 		                <os>Linux</os>
