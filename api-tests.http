@@ -1,0 +1,32 @@
+### Feed Service API Tests
+### Base URL
+@baseUrl = http://localhost:8080/api/feed
+
+### Parameters - Update these with actual values
+@postId = test-post-id
+@commentId = test-commend-id
+
+### ============================================
+### POST ENDPOINTS
+### ============================================
+
+### Get all posts (feed)
+GET {{baseUrl}}
+Content-Type: application/json
+
+### ============================================
+### COMMENT ENDPOINTS
+### ============================================
+
+### Get all comments for a post
+GET {{baseUrl}}/{{postId}}/comments
+Content-Type: application/json
+
+### Create a new comment
+POST {{baseUrl}}/{{postId}}/comments
+Content-Type: application/json
+
+{
+    "userId": "user-123",
+    "content": "This is a test comment"
+}
