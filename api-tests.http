@@ -5,6 +5,7 @@
 ### Parameters - Update these with actual values
 @postId = test-post-id
 @commentId = test-commend-id
+@userId = test-user-id
 
 ### ============================================
 ### POST ENDPOINTS
@@ -30,3 +31,27 @@ Content-Type: application/json
     "userId": "user-123",
     "content": "This is a test comment"
 }
+
+### ============================================
+### REACTION ENDPOINTS
+### ============================================
+
+### Add or update a reaction on a post (HELPFUL)
+PUT {{baseUrl}}/{{postId}}/reactions
+Content-Type: application/json
+
+{
+    "userId": "{{userId}}",
+    "reactionType": "HELPFUL"
+}
+
+### Get my reaction on a post
+GET {{baseUrl}}/{{postId}}/reactions/me?userId={{userId}}
+Content-Type: application/json
+
+### Get all reactions for a post
+GET {{baseUrl}}/{{postId}}/reactions
+Content-Type: application/json
+
+### Remove my reaction from a post
+DELETE {{baseUrl}}/{{postId}}/reactions?userId={{userId}}
