@@ -1,8 +1,6 @@
 package com.finscope.feed.dto;
 
 import com.finscope.feed.entities.Comment;
-import com.finscope.feed.entities.Post;
-
 import java.util.List;
 
 public class CommentResponse extends ApiResponse<Comment> {
