@@ -36,13 +36,13 @@ Content-Type: application/json
 ### REACTION ENDPOINTS
 ### ============================================
 
-### Add or update a reaction on a post (LIKE)
+### Add or update a reaction on a post (HELPFUL)
 PUT {{baseUrl}}/{{postId}}/reactions
 Content-Type: application/json
 
 {
     "userId": "{{userId}}",
-    "reactionType": "LIKE"
+    "reactionType": "HELPFUL"
 }
 
 ### Get my reaction on a post

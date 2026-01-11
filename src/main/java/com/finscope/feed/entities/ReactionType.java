@@ -1,7 +1,8 @@
 package com.finscope.feed.entities;
 
 public enum ReactionType {
-    LIKE,
+    HELPFUL,
+    BEARISH,
     BULLISH,
-    BEARISH
+    INSIGHTFUL
 }
